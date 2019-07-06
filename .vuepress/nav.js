@@ -1,1 +1,9 @@
-export default nav
+console.log(typeof '1')
+console.log(typeof 1)
+console.log(typeof 11n)
+console.log(typeof null)
+console.log(typeof undefined)
+console.log(typeof Symbol())
+console.log(typeof true)
+console.log(typeof function(){})
+console.log(typeof {})

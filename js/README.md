@@ -3,7 +3,7 @@
 本文中涉及到的JS部分主要以`ECMScript`为主，基本不太涉及`DOM`（Document Object Model），`BOM`（Browser Object Model）。
 ::: 
 ::: tip
-总所周知，JS是一门`动态类型语言`即`弱类型语言`，与`静态类型语言`即`强类型语言`。它们之间最大的**不同之处**在于，静态语言是在使用前必须声明类型，编译时即可确定，可以规避变量类型导致的错误，典型的语言有（Java、C++和C#等）；而动态类型，在运行时确定数据类型的语言且变量可被其他类型覆盖。
+总所周知，JS是一门`动态类型语言`即`弱类型语言`，与`静态类型语言`即`强类型语言`，它们之间最大的**不同之处**在于，静态语言是在使用前必须声明类型，编译时即可确定，可以规避变量类型导致的错误，典型的语言有（Java、C++和C#等）；而动态类型，在运行时确定数据类型的语言且变量可被其他类型覆盖。
 ::: 
 
 ## JS数据类型
@@ -53,4 +53,25 @@ let obj = Object.create(null);
 ### TypeOf
 typeof 算是判断基础类型最好用的方法了
 
-### Instance Of
+```js
+console.log(typeof '1')
+console.log(typeof 1)
+console.log(typeof 11n)
+console.log(typeof null)
+console.log(typeof undefined)
+console.log(typeof Symbol())
+console.log(typeof true)
+console.log(typeof function(){})
+console.log(typeof {})
+// number
+// bigint
+// object
+// undefined
+// symbol
+// boolean
+// function
+// object
+```
+`null`被判断为`object` 也算是见怪不怪的问题了。究其原因主要是因为不同的对象在底层都表示为二进制，在JS中二进制前三位都为 0 的话会被判断为`object`类型，null 的二进制表示是全 0，自然前三位也是 0，所以执行 typeof 时会返回`object`。
+
+### Instanceof
