@@ -12,7 +12,7 @@
 ### 基础类型
 `基础类型`分为`null`、`undefined`、`number`、`string`、`boolean`、`symbol`和[`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#BigInt_type)七种类型。
 
-`NaN`也属于`number`类型，且NaN !== NaN.
+`NaN`也属于`number`类型，且`NaN !== NaN`
 
 `bigint`在MDN中的解释如下
 ::: tip
@@ -54,23 +54,15 @@ let obj = Object.create(null);
 typeof 算是判断基础类型最好用的方法了
 
 ```js
-console.log(typeof '1')
-console.log(typeof 1)
-console.log(typeof 11n)
-console.log(typeof null)
-console.log(typeof undefined)
-console.log(typeof Symbol())
-console.log(typeof true)
-console.log(typeof function(){})
-console.log(typeof {})
-// number
-// bigint
-// object
-// undefined
-// symbol
-// boolean
-// function
-// object
+console.log(typeof '1') // string
+console.log(typeof 1) // number
+console.log(typeof 11n) // bigint
+console.log(typeof null) // object
+console.log(typeof undefined) // undefined
+console.log(typeof Symbol()) // symbol
+console.log(typeof true) // boolean
+console.log(typeof function(){}) // function
+console.log(typeof {}) // object
 ```
 `null`被判断为`object` 也算是见怪不怪的问题了。究其原因主要是因为不同的对象在底层都表示为二进制，在JS中二进制前三位都为 0 的话会被判断为`object`类型，null 的二进制表示是全 0，自然前三位也是 0，所以执行 typeof 时会返回`object`。
 

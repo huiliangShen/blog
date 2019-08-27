@@ -10,10 +10,13 @@ module.exports = {
     themeConfig: {
         nav: [
             {
-                text: '前端', link: '/js/'
+                text: '基础引导', link: '/sword/'
             },
             {
-                text: '算法与数据结构', link: '/algorithm/'                
+                text: '前端', link: '/fd/'
+            },
+            {
+                text: '算法与数据结构', link: '/algorithm/'
             },
             {
                 text: '设计模式', link: '/mode/'

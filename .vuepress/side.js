@@ -1,9 +1,9 @@
-const js = [
+const fd = [
   {
     title: 'JavaScript',
     children: [
       '',
-      'basic'
+      'basic',
     ]
   },
   {
@@ -39,10 +39,20 @@ const mode = [
   }
 ]
 
+const sword = [
+  {
+    title: '介绍',
+    children: [
+      ''
+    ]
+  }
+]
+
 module.exports = {
   // 侧边栏在 /foo/ 上
-  '/js/': js,
+  '/fd/': fd,
   // 侧边栏在 /bar/ 上
   '/algorithm/': algorithm,
-  '/mode/': mode
+  '/mode/': mode,
+  '/sword/': sword
 }

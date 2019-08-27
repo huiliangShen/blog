@@ -2,7 +2,7 @@
 home: true
 heroImage: https://mypics.zhaopin.cn//avatar/2019/3/1/50d9d3da-a70f-4cb5-977e-fa33fdaaa42f.jpg
 actionText: 前端，从入门到单身狗
-actionLink: /js/
+actionLink: /fd/
 features: ''
 footer: MIT Licensed | Copyright © 2019 般若
 ---
