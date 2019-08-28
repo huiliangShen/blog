@@ -4,7 +4,36 @@
     <meta charset="UTF-8">
     <title>标签测试</title>
 </head>
-<body>
+<body  style="width: 1000px; margin: auto">
+<section>
+    <p>常用的表单元素</p>
+    <div>
+        <input type="text" placeholder="这是默认的输入框">
+    </div>
+    <p>button</p>
+    <div>
+        <input type="button" value="这是个按钮">
+        <button type="button">这也是个按钮</button>
+    </div>
+    <p>checkbox</p>
+    <div>
+        <input type="checkbox" value="1">
+    </div>
+    <p>radio</p>
+    <div>
+        <input type="radio" value="1">
+    </div>
+    <p>列表</p>
+    <div>
+        <ul>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+        </ul>
+    </div>
+</section>
+<section style="border-top: 1px solid #eee;">
     <p>进度条</p>
     <progress value="10" max="100"></progress>
     <p>date</p>
@@ -13,7 +42,7 @@
     <input type="color">
     <br>
     <p>类似select</p>
-    <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+    <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice"/>
     <datalist id="ice-cream-flavors">
         <option value="Chocolate">
         <option value="Coconut">
@@ -21,5 +50,7 @@
         <option value="Strawberry">
         <option value="Vanilla">
     </datalist>
+</section>
+
 </body>
 </html>
