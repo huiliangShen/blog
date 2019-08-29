@@ -31,28 +31,6 @@
 </body>
 </html>
 ```
-## 盒模型
-对于css，我们必须了解它的盒子模型, 盒子模型包含以下几个属性：`content`,`padding`,`border`,`margin`
-
-* `margin`：代表盒子的外边距
-* `padding`：代表盒子的内边距
-* `content`：代表盒子的内容
-* `border`：代表盒子的边框
-
-在浏览器里，盒子模型主要分为两种：`标准盒模型`和`IE盒模型`
-两种盒子模型的区别主要在`width`的区别
-
-![标准盒模型](./contentbox.png)
-```js
-// 标准盒子模型中，盒子的宽度width
-const width = content
-```
-
-![IE盒模型](./borderbox.png)
-```js
-// IE盒子模型中，盒子的宽度width
-const width = content + paddingLeft + paddingRight + borderLeft + borderRight 
-```
 
 ## css语言规则结构
 
@@ -138,8 +116,37 @@ relative代表相对定位，它是相对于其自身定位
 ### fixed
 fixed 元素的定位是相对于 window （或者 iframe）边界。
 
+### z-index
+页面具有层级概念，当设置元素定位后可以设置z-index，设置元素展示在层级。
 
-## 弹性盒子
+## 盒模型
+对于css，我们必须了解它的盒子模型, 盒子模型包含以下几个属性：`content`,`padding`,`border`,`margin`
+
+* `margin`：代表盒子的外边距
+* `padding`：代表盒子的内边距
+* `content`：代表盒子的内容
+* `border`：代表盒子的边框
+
+在浏览器里，盒子模型主要分为两种：`标准盒模型`和`IE盒模型`
+两种盒子模型的区别主要在`width`的区别
+
+![标准盒模型](./contentbox.png)
+```js
+// 标准盒子模型中，盒子的宽度width
+const width = content
+```
+
+![IE盒模型](./borderbox.png)
+```js
+// IE盒子模型中，盒子的宽度width
+const width = content + paddingLeft + paddingRight + borderLeft + borderRight 
+```
+
+盒子模型的转化主要使用box-sizing属性
+* 标准盒子模型：`box-sizing: content-box`
+* IE盒子模型：`box-sizing: border-box`
+
+## flex
 css3中新诞生的一种布局方式，前端布局中最为广泛使用的布局
 
 推荐直接查看阮一峰老师的[博客](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool)
@@ -147,11 +154,74 @@ css3中新诞生的一种布局方式，前端布局中最为广泛使用的布�
 
 ## 页面布局
 
+一般页面布局使用float,position,div基本即可实现
+flex 则更为方便
 
 
 ## 变换
+css3新增 transform属性，为前端带来更多的2d，3d变化
+
+这里不详细讲解3d变化
+
+主要新增了缩放`scale`，移动`translate`，旋转`rotate`，斜切`skew`
+
+```css
+.xx {
+    transform: scale(1.1) translate(10px) rotate(45deg) skew(10deg);
+}
+```
+
+[MDN上较为详细的讲解了2d图形的坐标系](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-function#3D_%E5%9B%BE%E5%BD%A2%E7%9A%84%E5%9D%90%E6%A0%87)
+
+
+## transition过渡
+transition 可以实现一些简单的过渡效果，但和animation差别很大，animation是帧动画而transition只是一段过渡效果
+
+transition 属性是一个简写属性，用于设置四个过渡属性：
+
+* transition-property: 规定设置过渡效果的 CSS 属性的名称
+* transition-duration: 规定完成过渡效果需要多少秒或毫秒。
+* transition-timing-function: 规定速度效果的速度曲线。 更多效果可查看[mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)
+* transition-delay: 定义过渡效果何时开始。
+
+```css
+.xx {
+    transition: all .2s linear 1s
+}
+```
 
 ## 动画
+通过 CSS3，我们能够创建动画，这可以在许多网页中取代动画图片、Flash 动画以及 JavaScript。
+
+
+先来看下简单的动画创建过程
+```css
+div {
+    animation: myfirst 5s;
+    -moz-animation: myfirst 5s;	/* Firefox */
+    -webkit-animation: myfirst 5s;	/* Safari 和 Chrome */
+    -o-animation: myfirst 5s;	/* Opera */
+}
+@keyframes myfirst
+{
+    0%   {background: red; left:0px; top:0px;}
+    25%  {background: yellow; left:200px; top:0px;}
+    50%  {background: blue; left:200px; top:200px;}
+    75%  {background: green; left:0px; top:200px;}
+    100% {background: red; left:0px; top:0px;}
+}
+```
+
+animation 属性是一个简写属性，用于设置六个动画属性：
+
+* animation-name：规定需要绑定到选择器的 keyframe 名称。
+* animation-duration：规定完成动画所花费的时间，以秒或毫秒计。
+* animation-timing-function：规定动画的速度曲线。
+* animation-delay：规定在动画开始之前的延迟。
+* animation-iteration-count：`n`|`infinite`;规定动画应该播放的次数。
+* animation-direction：`normal`|`alternate`;规定是否应该轮流反向播放动画。包含属性
+* animation-fill-mode: `none`|`forwards`|`backwards`|`both`；定义动画结束时，最后一帧的位置
+
 
 ## 常用到的css属性
 ``` 
@@ -169,5 +239,6 @@ css3中新诞生的一种布局方式，前端布局中最为广泛使用的布�
   visible: hidden
   overflow: hidden
   position: relative | absoulte | fixed
+  box-shadow: 0 0 0 0 ${color}
 ```
 
