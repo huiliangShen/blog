@@ -4,7 +4,7 @@ node_js:
 install:
   - yarn install # npm ci
   - yarn add vuepress
-  - yarn build
+  # - yarn build
 script:
   - chmod u+x deploy.sh
   - bash ./deploy.sh
