@@ -25,7 +25,10 @@ module.exports = {
             {
                 text: '计算机网络', link: '/network/'
             },
-            { text: 'GitHub', link: 'https://github.com/huiliangShen' },
+            {
+                text: '个人', link: '/person/'
+            },
+            {text: 'GitHub', link: 'https://github.com/huiliangShen'},
         ],
         sidebar
     }
