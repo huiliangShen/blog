@@ -10,7 +10,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   local_dir: my-blog/.vuepress/dist
-  github_token: e8dcf22024f367bd61085e0e608a5c7aed195c07
+  github_token: 463d477fb23564ed3137e04291478be30b1e1f1c
   # 在 GitHub 中生成，用于允许 Travis 向你的仓库推送代码。在 Travis 的项目设置页面进行配置，设置为 secure variable
   keep_history: true
   on:
