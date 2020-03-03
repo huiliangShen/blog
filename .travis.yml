@@ -6,7 +6,8 @@ install:
   - yarn add vuepress
   - yarn docs:build
 script:
-  - my-blog/deploy.sh
+  - chmod u+x deploy.sh
+  - bash ./deploy.sh
 
   #- yarn add vuepress
   #- yarn docs:build # npm run docs:build
@@ -19,3 +20,4 @@ script:
   #keep_history: true
   #on:
     #branch: master
+branch: master
