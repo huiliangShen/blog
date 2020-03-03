@@ -6,7 +6,7 @@ install:
   - yarn add vuepress
   - yarn docs:build
 script:
-  - ./deploy.sh
+  - my-blog/deploy.sh
 
   #- yarn add vuepress
   #- yarn docs:build # npm run docs:build
