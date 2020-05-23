@@ -85,7 +85,7 @@ JavaScript 一直没有模块（module）体系，无法将一个大程序拆分
 
 #### 阶段一：语法层面的约定封装
 
-初期阶段，一些简单粗暴的约定封装，方式许多，优势劣势各有不同。大多利用 JavaScript 的语言特性和浏览器特性，使用 script 标签、目录文件的组织、闭包、IIFE、对象模拟命名空间等方法。
+初期阶段，一些简单粗暴的约定封装，方式许多，优势劣势各有不同。大多利用 JavaScript 的语言特性和浏览器特性，使用 script 标签、目录文件的组织、[闭包](http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html)、[IIFE](https://segmentfault.com/a/1190000003985390)、对象模拟命名空间等方法。
 
 ```js
 // 1.通过简单的文件名来做归类
@@ -247,7 +247,6 @@ CommonJS、AMD、CMD、ES module
     });
     ```
 	
-
 3. CMD
 
    CMD(Common Module Definition) sea.js 规范采用异步方式加载模块
@@ -304,10 +303,47 @@ CommonJS、AMD、CMD、ES module
    ​		运行时加载: CommonJS 模块就是对象；即在输入时是先加载整个模块，生成一个对象，然后再从这个对象上面读取方法，这种加载称为“运行时加载”。
 
    ​		编译时加载: ES6 模块不是对象，而是通过 `export` 命令显式指定输出的代码，`import`时采用静态命令的形式。即在`import`时可以指定加载某个输出值，而不是加载整个模块，这种加载称为“编译时加载”。
-
-
+   
+   
 
 ​	seaJS是玉伯大佬写的，有兴趣可以读下[玉伯为什么要写这个模块加载器](https://github.com/seajs/seajs/issues/588)
 
 ​	~~其实中间有个UMD规范 是针对AMD中无法使用CommonJS才出来的，可在UMD中同时使用AMD与CommonJS~~
+
+
+
+#### 展望
+
+未来前端发展，模块化不会在成为让人需要选择的事情，es module应该会统治前端很久一段时间，各大浏览器厂商也会直接支持module引入代码
+
+```html
+<script	type="module" src="a.js"></script>
+<script	type="module" src="a.js"></script>
+```
+
+大胆预测下以后的前端，打包工具也会更加简介类似[vite](https://github.com/vitejs/vite)更加轻量化，浏览器会为我们实现更多的功能。
+
+
+
+#### 拓展
+
+在这里稍微提及下nodeJS之父的新语言[deno](https://github.com/denoland)，有兴趣可以了解下。
+
+- Deno does not use `npm`
+
+  - It uses modules referenced as URLs or file paths
+
+- Deno does not use `package.json` in its module resolution algorithm.
+
+- All async actions in Deno return a promise. Thus Deno provides different APIs than Node.
+
+- Deno requires explicit permissions for file, network, and environment access.
+
+- Deno always dies on uncaught errors.
+
+- Uses "ES Modules" and does not support `require()`. Third party modules are imported via URLs:
+
+```js
+import * as log from "https://deno.land/std/log/mod.ts";
+```
 
