@@ -69,13 +69,23 @@ const network = [
   }
 ]
 
+const blogs = [
+  {
+    title: '随笔',
+    children: [
+      ''
+    ]
+  }
+]
+
 module.exports = {
   // 侧边栏在 /foo/ 上
   '/fd/': fd,
   // 侧边栏在 /bar/ 上
-  '/algorithm/': algorithm,
+  '/language/algorithm/': algorithm,
   '/mode/': mode,
   '/sword/': sword,
   '/person/': person,
-  '/network/': network
+  '/language/network/': network,
+  '/blogs/': blogs
 }
