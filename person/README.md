@@ -3,17 +3,17 @@
 
 ### 复盘2019
 
- <input type="checkbox" checked> 出去旅游
+ <input type="checkbox" checked disabled> 出去旅游
 
-<input type="checkbox" checked> 学习react(class, hooks)
+<input type="checkbox" checked disabled> 学习react(class, hooks)
 
- <input type="checkbox" > 学习react-native
+ <input type="checkbox" disabled> 学习react-native
 
- <input type="checkbox" > 学习typescript
+ <input type="checkbox" disabled> 学习typescript
 
- <input type="checkbox" > 看完《活着》《css权威指南》
+ <input type="checkbox" disabled> 看完《活着》《css权威指南》
 
- <input type="checkbox" > 减肥
+ <input type="checkbox" disabled> 减肥
 
 ### 2020code
 - vue源码（希望能把所需的理一遍）

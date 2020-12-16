@@ -4,7 +4,7 @@ module.exports = {
     repo: 'huiliangShen/blog',
     title: '般若的博客',
     description: '有时候读书是一种巧妙地避开思考的方法',
-    port: '8888',
+    port: '666',
     base: '/blog/',
     // dest: 'public',
     lastUpdated: '更新于',
