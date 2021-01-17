@@ -41,6 +41,7 @@ module.exports = {
             },
             {text: 'GitHub', link: 'https://github.com/huiliangShen'},
         ],
-        sidebar
+        sidebar,
+        lastUpdated: '更新时间', // string | boolean
     }
 }
