@@ -263,7 +263,7 @@ CommonJS、AMD、CMD、ES module
             b.doSomething();
         }
     });
-
+	
     // sea.js
     // 定义模块 c.js
     define(function(require, exports, module) {
