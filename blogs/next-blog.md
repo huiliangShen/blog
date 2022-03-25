@@ -2,7 +2,7 @@
 
 1. freedom项目的讲解（需要自己优化代码）
 2. 实现一个拖拽库（vue, react, js）
-3. 前端微服务的实现方式
+3. 前端微服务的实现方式 https://github.com/woai3c/mini-single-spa/branches
 4. 详解qiankun
 5. 实现自己的cli工具
 6. ~~实现一个日历组件~~
@@ -12,7 +12,7 @@
 10. 需要一个压缩pdf的工具
 11. 做个画板
 12. low-code实现方式
-13. 数据结构与算法
+13. 数据结构与算法 （ing）
 
 
 
@@ -39,3 +39,4 @@ owner -> 组件维护更替答疑生态（做了多少组件，被多少使用�
 微前端到底带来了什么价值？
 
 qiankun2.0 变成了子应用加载器，和webpack import有什么差别
+
