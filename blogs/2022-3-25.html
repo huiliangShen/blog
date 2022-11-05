@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>3-25 学习数据结构与算法 By JS：栈 | 般若的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="有时候读书是一种巧妙地避开思考的方法">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.6822ba10.css" as="style"><link rel="preload" href="/blog/assets/js/app.d2a3d452.js" as="script"><link rel="preload" href="/blog/assets/js/2.a40e2ea7.js" as="script"><link rel="preload" href="/blog/assets/js/6.053414d8.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.b1128f18.js"><link rel="prefetch" href="/blog/assets/js/11.b56c119c.js"><link rel="prefetch" href="/blog/assets/js/12.fe35b75f.js"><link rel="prefetch" href="/blog/assets/js/13.f1720490.js"><link rel="prefetch" href="/blog/assets/js/14.606221f3.js"><link rel="prefetch" href="/blog/assets/js/15.56fe9abd.js"><link rel="prefetch" href="/blog/assets/js/16.8371da95.js"><link rel="prefetch" href="/blog/assets/js/17.6971b9e5.js"><link rel="prefetch" href="/blog/assets/js/18.88ebfa84.js"><link rel="prefetch" href="/blog/assets/js/19.75862188.js"><link rel="prefetch" href="/blog/assets/js/20.d20e093c.js"><link rel="prefetch" href="/blog/assets/js/21.8e00bf56.js"><link rel="prefetch" href="/blog/assets/js/22.b18ed5d3.js"><link rel="prefetch" href="/blog/assets/js/23.b14652b3.js"><link rel="prefetch" href="/blog/assets/js/24.069f42ee.js"><link rel="prefetch" href="/blog/assets/js/25.5adf81cb.js"><link rel="prefetch" href="/blog/assets/js/26.9914d2dd.js"><link rel="prefetch" href="/blog/assets/js/27.f24c3597.js"><link rel="prefetch" href="/blog/assets/js/28.7c5066b8.js"><link rel="prefetch" href="/blog/assets/js/29.6e9db02f.js"><link rel="prefetch" href="/blog/assets/js/3.8f423983.js"><link rel="prefetch" href="/blog/assets/js/30.eb287c99.js"><link rel="prefetch" href="/blog/assets/js/31.d9d66cbb.js"><link rel="prefetch" href="/blog/assets/js/32.4aad4273.js"><link rel="prefetch" href="/blog/assets/js/33.ee7b49e8.js"><link rel="prefetch" href="/blog/assets/js/34.ba91855f.js"><link rel="prefetch" href="/blog/assets/js/35.5ce866c5.js"><link rel="prefetch" href="/blog/assets/js/36.c8a0d893.js"><link rel="prefetch" href="/blog/assets/js/37.b97f1d61.js"><link rel="prefetch" href="/blog/assets/js/38.7c9ec00d.js"><link rel="prefetch" href="/blog/assets/js/39.b8f44d6c.js"><link rel="prefetch" href="/blog/assets/js/4.d83bd4ee.js"><link rel="prefetch" href="/blog/assets/js/40.e47d71ac.js"><link rel="prefetch" href="/blog/assets/js/41.43d2d88a.js"><link rel="prefetch" href="/blog/assets/js/42.592dad85.js"><link rel="prefetch" href="/blog/assets/js/5.8ccc13bc.js"><link rel="prefetch" href="/blog/assets/js/7.92db094a.js"><link rel="prefetch" href="/blog/assets/js/8.677f2401.js"><link rel="prefetch" href="/blog/assets/js/9.f73e2845.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.6822ba10.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">般若的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/sword/" class="nav-link">
+  写在前面
+</a></div><div class="nav-item"><a href="/blog/fd/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/blog/mode/" class="nav-link">
+  设计模式
+</a></div><div class="nav-item"><a href="/blog/person/" class="nav-link">
+  个人
+</a></div><div class="nav-item"><a href="/blog/blogs/" class="nav-link router-link-active">
+  随笔
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/algorithm/" class="nav-link">
+  算法与数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/network/" class="nav-link">
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/huiliangShen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/sword/" class="nav-link">
+  写在前面
+</a></div><div class="nav-item"><a href="/blog/fd/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/blog/mode/" class="nav-link">
+  设计模式
+</a></div><div class="nav-item"><a href="/blog/person/" class="nav-link">
+  个人
+</a></div><div class="nav-item"><a href="/blog/blogs/" class="nav-link router-link-active">
+  随笔
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/algorithm/" class="nav-link">
+  算法与数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/network/" class="nav-link">
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/huiliangShen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>随笔</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/blogs/" aria-current="page" class="sidebar-link">2020-5-23 前端模块化</a></li><li><a href="/blog/blogs/12-14.html" class="sidebar-link">2020-12-14 面试经历</a></li><li><a href="/blog/blogs/12-31.html" class="sidebar-link">2020-12-31 原生JS实现日历</a></li><li><a href="/blog/blogs/2021-1-15.html" class="sidebar-link">2021-1-15 实现小球落袋的效果</a></li><li><a href="/blog/blogs/2021-1-31.html" class="sidebar-link">2021-1-31  教你用CSS解决一些面试问题</a></li><li><a href="/blog/blogs/2022-2-10.html" class="sidebar-link">2022-2-10 学习数据结构与算法 By JS：开篇</a></li><li><a href="/blog/blogs/2022-2-28.html" class="sidebar-link">2-28 学习数据结构与算法 By JS：数组</a></li><li><a href="/blog/blogs/2022-3-25.html" aria-current="page" class="active sidebar-link">3-25 学习数据结构与算法 By JS：栈</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/blogs/2022-4-19.html" class="sidebar-link">4-19 学习数据结构与算法 By JS：队列和双端队列</a></li><li><a href="/blog/blogs/2022-11-5.html" class="sidebar-link">11-5 omit.js 源码浅析</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="_3-25-学习数据结构与算法-by-js-栈"><a href="#_3-25-学习数据结构与算法-by-js-栈" class="header-anchor">#</a> 3-25 学习数据结构与算法 By JS：栈</h3> <h4 id="_1-前言"><a href="#_1-前言" class="header-anchor">#</a> 1.前言</h4> <p>栈是一种遵循<code>后进先出</code>原则的有序集合；添加和删除的元素都在<code>同一端进出（即栈顶）</code>，另一端的元素在底部（即栈底），底部元素必须等待顶部元素全部弹出后才能被拿出；</p> <blockquote><p>后进先出，也可以理解为先进后出，针对栈元素来说，先进去的元素必然最后才会出去，理解这个意思行</p></blockquote> <p>举个例子：</p> <p>我们有一个<code>空箱子</code>和一堆<code>书</code>，<code>书的大小</code>和<code>空箱子大小</code><u>一致</u>；往空箱子内一本一本<code>放书的过程</code>就是<code>入栈的过程</code>；<code>拿书的过程</code>就是<code>出栈的过程</code>；也可以参考下下面的三张图片，加深下印象；</p> <img src="/blog/assets/img/stack.ef8437f8.png"> <img src="/blog/assets/img/stack_add.b21724c9.png"> <img src="/blog/assets/img/stack_pop.d6e35f7c.png"> <h4 id="_2-栈结构的实现"><a href="#_2-栈结构的实现" class="header-anchor">#</a> 2.栈结构的实现</h4> <p>栈结构的模拟，我们可以使用js原生的数组来实现，也可以用js对象来实现，这里将两种方法都实现一下；</p> <h5 id="_2-1-栈结构所拥有的方法"><a href="#_2-1-栈结构所拥有的方法" class="header-anchor">#</a> 2.1 栈结构所拥有的方法</h5> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 1.添加元素、入栈</span>
+  <span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token comment">// 2.删除元素、出栈，移除栈顶元素并返回该元素</span>
+  <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token comment">// 3.返回栈顶元素，只读，不修改栈内元素</span>
+  <span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token comment">// 4.判断栈是否为空</span>
+  <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token comment">// 5.清空栈</span>
+  <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token comment">// 6.返回栈内元素数量</span>
+  <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h5 id="_2-2-数组模拟栈的实现"><a href="#_2-2-数组模拟栈的实现" class="header-anchor">#</a> 2.2 数组模拟栈的实现</h5> <p>使用数组来模拟栈结构有以下优点</p> <ul><li>使用数组<code>原生方法</code>操作栈的入栈(<code>push</code>)和出栈(<code>pop</code>)，当然也可以使用<code>unshfit</code>和<code>shift</code>,差别只在插入位置在数组尾部与数组头部的差别</li> <li>无需额外维护栈元素的长度，直接使用数组的<code>length</code>属性即可；</li></ul> <p>缺点是</p> <ul><li>数组是连续存储的，栈元素过多，原本的内存空间不够用的情况下，会重新开辟连续的无占用的内存空间重新存放</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Stack</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 初始化栈</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 添加栈元素</span>
+  <span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 出栈</span>
+  <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 查看栈顶元素</span>
+  <span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 判断栈是否为空</span>
+  <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 返回栈内元素数量</span>
+  <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span>length
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 清空栈元素</span>
+  <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  	<span class="token comment">// 或者</span>
+  	<span class="token comment">// this.items.length = 0</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>因为测试需要，每次观察变动后的内部元素，所以新增一个<code>toString</code>方法，方便观察数据的变化</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Stack</span> <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+	 <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token string">&quot;no elements&quot;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h5 id="_2-3-对象模拟栈的实现"><a href="#_2-3-对象模拟栈的实现" class="header-anchor">#</a> 2.3 对象模拟栈的实现</h5> <p>使用对象来模拟栈结构有以下优点</p> <ul><li>存入方便，直接使用<code>items[key] = value</code>，存储即可，获取也同样方便直接使用<code>items[key]</code></li> <li>因为是引用对象，存储不像数组那样需要连续的内存空间，高效使用内存中的片段</li></ul> <p>缺点是</p> <ul><li>需要多一个<code>length</code>字段来维护栈的长度的同时也维护对象的<code>key</code>值，防止key值<code>重复</code></li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Stack</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 初始化栈</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment">// 需要多维护一个栈元素长度</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 添加栈元素</span>
+  <span class="token comment">// 添加完后items会变为</span>
+  <span class="token comment">// {</span>
+  <span class="token comment">//		0: 1,</span>
+  <span class="token comment">//		1: 2,</span>
+	<span class="token comment">// }</span>
+  <span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> item
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 出栈</span>
+  <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">undefined</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token operator">--</span>
+    <span class="token keyword">const</span> item <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token punctuation">]</span>
+    <span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token punctuation">]</span>
+  	<span class="token keyword">return</span> item
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 查看栈顶元素</span>
+  <span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">undefined</span>
+    <span class="token punctuation">}</span>
+  	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 判断栈是否为空</span>
+  <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 返回栈内元素数量</span>
+  <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 清空栈元素</span>
+  <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>同样的，新增一个<code>toString</code>方法，方便观察数据的变化</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Stack</span><span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+	<span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			 <span class="token keyword">return</span> <span class="token string">&quot;no elements&quot;</span>
+		<span class="token punctuation">}</span>
+		<span class="token comment">// 获取对象内的所有value</span>
+		<span class="token keyword">const</span> items <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">)</span>
+		<span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> items<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>items<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h5 id="_2-5-栈的测试"><a href="#_2-5-栈的测试" class="header-anchor">#</a> 2.5 栈的测试</h5> <p>分别对两个<code>Stack</code>进行测试，这里因为命名相同，我们挨个来测就好；添加我们的测试用例来看下结果如何</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 新增一些元素</span>
+s<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token comment">// 打印下栈</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'stack elements:'</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;, size:&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 元素出栈</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'pop result:'</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 打印下栈</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'stack elements:'</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;, size:&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 获取栈顶元素</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'peek:'</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 打印下栈</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'stack elements:'</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;, size:&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">666</span><span class="token punctuation">)</span>
+<span class="token comment">// 打印下栈</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'stack elements:'</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;, size:&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 判断栈是否是空</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'isEmpty:'</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 打印下栈</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'after clear stack elements:'</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;, size:&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 经过测试，我们得到以下内容，符合栈结构的结果</span>
+<span class="token comment">// stack elements: 1,2,3 , size: 3</span>
+<span class="token comment">// pop result: 3</span>
+<span class="token comment">// stack elements: 1,2 , size: 2</span>
+<span class="token comment">// peek: 2</span>
+<span class="token comment">// stack elements: 1,2 , size: 2</span>
+<span class="token comment">// stack elements: 1,2,666 , size: 3</span>
+<span class="token comment">// isEmpty: false</span>
+<span class="token comment">// after clear stack elements: no elements , size: 0</span>
+</code></pre></div><h4 id="_3-使用栈来解决的问题"><a href="#_3-使用栈来解决的问题" class="header-anchor">#</a> 3.使用栈来解决的问题</h4> <h5 id="_3-1-10进制转2进制方法的实现"><a href="#_3-1-10进制转2进制方法的实现" class="header-anchor">#</a> 3.1 10进制转2进制方法的实现</h5> <p>示例：</p> <p>输入：10</p> <p>输出： 01010</p> <p>10进制转2进制，我们一般使用10 ➗ 2后取<code>余数</code>与<code>结果</code>，结果<code>继续➗2</code>直到商为0之后<code>倒序取余数</code>，即为2进制的结果；具体看下面的例子：</p> <p>举例10进制9转2进制</p> <ul><li>9 % 2 商为 4 余数为1</li> <li>4 % 2 商为2 余数为0</li> <li>2 % 2 商为1 余数为0</li> <li>1 % 2 商为0 余数为1</li> <li>0 % 2 商为0 余数为0</li></ul> <p>结果为01001;</p> <p>实现下代码逻辑</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">decimal2Binary</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span>
+ 	<span class="token comment">// 0在这里面起到循环中端，不能使用num &gt;= 0, 0 / 2会始终返回0，进入无限循环</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>num <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> mod <span class="token operator">=</span> num <span class="token operator">%</span> <span class="token number">2</span>
+    num <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>num <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>mod<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">let</span> binary <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>stack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    binary <span class="token operator">+=</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> binary
+<span class="token punctuation">}</span>
+</code></pre></div><h5 id="_3-2-leetcode第20题-有效的括号"><a href="#_3-2-leetcode第20题-有效的括号" class="header-anchor">#</a> 3.2 <a href="https://leetcode-cn.com/problems/valid-parentheses/" target="_blank" rel="noopener noreferrer">leetcode第20题：有效的括号<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h5> <p>给定一个只包括 <code>'('</code>，<code>')'</code>，<code>'{'</code>，<code>'}'</code>，<code>'['</code>，<code>']'</code> 的字符串 <code>s</code> ，判断字符串是否有效。</p> <p>有效字符串需满足：</p> <ol><li>左括号必须用相同类型的右括号闭合。</li> <li>左括号必须以正确的顺序闭合。</li></ol> <p>可以试着用栈来解决下这个问题：)</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">3/25/2022, 8:03:35 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/blogs/2022-2-28.html" class="prev">
+        2-28 学习数据结构与算法 By JS：数组
+      </a></span> <span class="next"><a href="/blog/blogs/2022-4-19.html">
+        4-19 学习数据结构与算法 By JS：队列和双端队列
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.d2a3d452.js" defer></script><script src="/blog/assets/js/2.a40e2ea7.js" defer></script><script src="/blog/assets/js/6.053414d8.js" defer></script>
+  </body>
+</html>
